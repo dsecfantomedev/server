@@ -1,0 +1,17 @@
+name: deploy server
+on: [push]
+jobs:
+  create-folder:
+    name: create-folder
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execute commands
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          port: 22
+          script: |
+          mkdir -p /opt/applications/QUALITUS/server
+          ls -al /opt/applications/QUALITUS 
