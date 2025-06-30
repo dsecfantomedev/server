@@ -13,5 +13,4 @@ jobs:
           key: ${{ secrets.PRIVATE_KEY }}
           port: 22
           script: |
-          mkdir -p ~/opt/applications/qualitus/server
-          ls -al ~/opt/applications/qualitus
+          
